@@ -1,11 +1,11 @@
 {
-  "name": "@showwaiyan/rendermd",
-  "version": "1.0.2",
+  "name": "md-viewport",
+  "version": "2.0.1",
   "description": "Render Markdown files into a rich, well-styled HTML page in the browser",
   "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "rendermd": "./dist/cli.js"
+    "mdvp": "dist/cli.js"
   },
   "files": [
     "dist",
@@ -38,12 +38,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Showwaiyan/Render-md.git"
+    "url": "git+https://github.com/Showwaiyan/md-viewport.git"
   },
   "bugs": {
-    "url": "https://github.com/Showwaiyan/Render-md/issues"
+    "url": "https://github.com/Showwaiyan/md-viewport/issues"
   },
-  "homepage": "https://github.com/Showwaiyan/Render-md#readme",
+  "homepage": "https://github.com/Showwaiyan/md-viewport#readme",
   "engines": {
     "node": ">=14.0.0"
   },

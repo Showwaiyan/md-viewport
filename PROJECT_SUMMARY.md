@@ -1,21 +1,21 @@
-# @showwaiyan/rendermd - Project Summary
+# md-viewport - Project Summary
 
 ## Overview
 
-`@showwaiyan/rendermd` is a complete, production-ready CLI tool that renders Markdown files into beautifully styled HTML pages and opens them directly in the browser. No live server required—just instant, polished previews.
+`md-viewport` is a complete, production-ready CLI tool that renders Markdown files into beautifully styled HTML pages and opens them directly in the browser. No live server required—just instant, polished previews.
 
 ## Package Information
 
-- **npm package:** `@showwaiyan/rendermd`
-- **CLI command:** `rendermd`
-- **Version:** 1.0.0
+- **npm package:** `md-viewport`
+- **CLI command:** `mdvp`
+- **Version:** 2.0.0
 - **Published:** ✅ Available on npm registry
 
 ## What Was Built
 
 ### Core Features
 
-1. **CLI Tool** (`rendermd <file>`)
+1. **CLI Tool** (`mdvp <file>`)
    - Instant markdown to HTML rendering
    - Opens in default browser automatically
    - Cross-platform support (macOS, Linux, Windows)
@@ -60,7 +60,7 @@
    - Works on all code blocks
 
 9. **Configuration System**
-   - `.rendermdrc` or `.rendermdrc.json`
+   - `.mdvprc` or `.mdvprc.json`
    - Project-level or user-level configs
    - CLI options override config files
 
@@ -72,7 +72,7 @@
 ## Project Structure
 
 ```
-Render-md/
+md-viewport/
 ├── src/
 │   ├── cli.ts              # CLI entry point with commander.js
 │   ├── index.ts            # Public API exports
@@ -85,7 +85,7 @@ Render-md/
 │       ├── config.ts      # Config file loader
 │       └── file.ts        # File I/O operations
 ├── dist/                   # Compiled JavaScript (generated)
-├── .rendermdrc.json       # Example config file
+├── .mdvprc.json       # Example config file
 ├── example.md             # Demo markdown file
 ├── package.json           # NPM package configuration
 ├── tsconfig.json          # TypeScript configuration
@@ -97,6 +97,7 @@ Render-md/
 ## Technologies Used
 
 ### Core Dependencies
+
 - **marked** (v17.0.1) - Markdown parser with GFM support
 - **marked-gfm-heading-id** (v4.1.3) - Automatic heading IDs for anchors
 - **marked-highlight** (v2.2.3) - Syntax highlighting integration
@@ -106,19 +107,20 @@ Render-md/
 - **open** (v11.0.0) - Cross-platform browser launcher
 
 ### Dev Dependencies
+
 - **TypeScript** (v5.9.3) - Type safety and modern JS features
 - **@types/node** - Node.js type definitions
 - **prettier** - Code formatting
 
 ## How It Works
 
-1. **Input**: User runs `rendermd file.md`
-2. **Config Loading**: Loads settings from `.rendermdrc` (if exists)
+1. **Input**: User runs `mdvp file.md`
+2. **Config Loading**: Loads settings from `.mdvprc` (if exists)
 3. **File Reading**: Reads the markdown file
 4. **Parsing**: Converts markdown to HTML using marked.js
 5. **Enhancement**: Adds syntax highlighting, TOC, math, diagrams
 6. **Styling**: Wraps content in GitHub Modern styled HTML
-7. **Temp File**: Writes complete HTML to `/tmp/rendermd-{hash}.html`
+7. **Temp File**: Writes complete HTML to `/tmp/mdvp-{hash}.html`
 8. **Browser**: Opens file in default browser
 9. **Cleanup**: Deletes temp file after delay (optional)
 
@@ -126,18 +128,18 @@ Render-md/
 
 ```bash
 # Basic usage
-rendermd README.md
+mdvp README.md
 
 # Options
-rendermd file.md --theme dark        # Force dark theme
-rendermd file.md --no-toc            # Disable table of contents
-rendermd file.md --no-auto-cleanup   # Keep temp file
-rendermd file.md --cleanup-delay 120000  # 2-minute cleanup
+mdvp file.md --theme dark        # Force dark theme
+mdvp file.md --no-toc            # Disable table of contents
+mdvp file.md --no-auto-cleanup   # Keep temp file
+mdvp file.md --cleanup-delay 120000  # 2-minute cleanup
 ```
 
 ## Configuration File
 
-Create `.rendermdrc.json`:
+Create `.mdvprc.json`:
 
 ```json
 {
@@ -156,40 +158,45 @@ Create `.rendermdrc.json`:
 ## Installation & Publishing
 
 ### Local Testing
+
 ```bash
 npm install
 npm run build
 npm link
-rendermd example.md
+mdvp example.md
 ```
 
 ### Published to npm ✅
+
 ```bash
 npm publish --access public
 ```
 
 Users can install globally:
+
 ```bash
-npm install -g @showwaiyan/rendermd
+npm install -g md-viewport
 ```
 
 Or use without installing:
+
 ```bash
-npx @showwaiyan/rendermd README.md
+npx md-viewport README.md
 ```
 
 ## Testing
 
 The tool has been tested with:
+
 - `example.md` - Full feature demonstration
 - `README.md` - Real-world documentation
 - Various CLI options and configurations
 
 ## Next Steps for Users
 
-1. **Install**: `npm install -g @showwaiyan/rendermd`
-2. **Try it**: `rendermd README.md`
-3. **Configure**: Create `.rendermdrc.json` with your preferences
+1. **Install**: `npm install -g md-viewport`
+2. **Try it**: `mdvp README.md`
+3. **Configure**: Create `.mdvprc.json` with your preferences
 4. **Enjoy**: Preview markdown files beautifully styled
 
 ## Future Enhancements (Optional)

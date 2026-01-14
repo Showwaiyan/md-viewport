@@ -1,13 +1,13 @@
-# @showwaiyan/rendermd Usage Examples
+# md-viewport Usage Examples
 
 ## Installation
 
 ```bash
 # Global installation (recommended)
-npm install -g @showwaiyan/rendermd
+npm install -g md-viewport
 
 # Or use npx without installation
-npx @showwaiyan/rendermd README.md
+npx md-viewport README.md
 ```
 
 ## Basic Examples
@@ -15,13 +15,14 @@ npx @showwaiyan/rendermd README.md
 ### 1. Render a Simple Markdown File
 
 ```bash
-rendermd README.md
+mdvp README.md
 ```
 
 Output:
+
 ```
 Rendering: README.md
-Generated: /tmp/rendermd-a1b2c3d4.html
+Generated: /tmp/mdvp-a1b2c3d4.html
 Opened in browser
 Temp file will be cleaned up in 60s
 ```
@@ -29,19 +30,19 @@ Temp file will be cleaned up in 60s
 ### 2. Force Dark Theme
 
 ```bash
-rendermd documentation.md --theme dark
+mdvp documentation.md --theme dark
 ```
 
 ### 3. Force Light Theme
 
 ```bash
-rendermd notes.md --theme light
+mdvp notes.md --theme light
 ```
 
 ### 4. Disable Table of Contents
 
 ```bash
-rendermd article.md --no-toc
+mdvp article.md --no-toc
 ```
 
 Useful for simple documents without headings.
@@ -49,7 +50,7 @@ Useful for simple documents without headings.
 ### 5. Keep the HTML File
 
 ```bash
-rendermd report.md --no-auto-cleanup
+mdvp report.md --no-auto-cleanup
 ```
 
 The temp file path will be printed so you can save it.
@@ -57,20 +58,20 @@ The temp file path will be printed so you can save it.
 ### 6. Custom Cleanup Delay (5 minutes)
 
 ```bash
-rendermd presentation.md --cleanup-delay 300000
+mdvp presentation.md --cleanup-delay 300000
 ```
 
 ### 7. Minimal Rendering (No Extra Features)
 
 ```bash
-rendermd basic.md --no-toc --no-copy-button --no-math --no-mermaid
+mdvp basic.md --no-toc --no-copy-button --no-math --no-mermaid
 ```
 
 ## Configuration File Examples
 
 ### Example 1: Developer Setup
 
-`.rendermdrc.json` in your project:
+`.mdvprc.json` in your project:
 
 ```json
 {
@@ -117,16 +118,16 @@ rendermd basic.md --no-toc --no-copy-button --no-math --no-mermaid
 
 ```bash
 # Technical documentation
-rendermd API.md --theme dark --toc
+mdvp API.md --theme dark --toc
 
 # Blog post
-rendermd blog-post.md --no-toc
+mdvp blog-post.md --no-toc
 
 # Math notes
-rendermd calculus.md --math
+mdvp calculus.md --math
 
 # Diagrams and flowcharts
-rendermd architecture.md --mermaid
+mdvp architecture.md --mermaid
 ```
 
 ### Integration with Other Tools
@@ -136,7 +137,7 @@ rendermd architecture.md --mermaid
 ```bash
 # In .git/hooks/pre-commit
 #!/bin/bash
-rendermd CHANGELOG.md --no-auto-cleanup
+mdvp CHANGELOG.md --no-auto-cleanup
 ```
 
 #### With npm scripts
@@ -146,8 +147,8 @@ In `package.json`:
 ```json
 {
   "scripts": {
-    "preview": "rendermd README.md",
-    "docs": "rendermd docs/API.md --theme dark"
+    "preview": "mdvp README.md",
+    "docs": "mdvp docs/API.md --theme dark"
   }
 }
 ```
@@ -165,10 +166,10 @@ In `Makefile`:
 
 ```makefile
 preview:
-	rendermd README.md
+	mdvp README.md
 
 docs:
-	rendermd docs/*.md --no-auto-cleanup
+	mdvp docs/*.md --no-auto-cleanup
 ```
 
 ## Markdown Examples That Work Great
@@ -188,6 +189,7 @@ console.log(greeting);
 Inline: $E = mc^2$
 
 Block:
+
 $$
 \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
@@ -206,11 +208,11 @@ graph LR
 ### Tables
 
 ```markdown
-| Feature | Supported |
-|---------|-----------|
-| GFM | ✅ |
-| Math | ✅ |
-| Diagrams | ✅ |
+| Feature  | Supported |
+| -------- | --------- |
+| GFM      | ✅        |
+| Math     | ✅        |
+| Diagrams | ✅        |
 ```
 
 ### Task Lists
@@ -225,7 +227,7 @@ graph LR
 ### File Not Found
 
 ```bash
-rendermd non-existent.md
+mdvp non-existent.md
 # Error: File not found: /path/to/non-existent.md
 ```
 
@@ -267,7 +269,7 @@ Note: `mermaid` must be lowercase in the code fence.
 Add to your `.bashrc` or `.zshrc`:
 
 ```bash
-alias md='rendermd'
+alias md='mdvp'
 ```
 
 Then use:
@@ -280,7 +282,7 @@ md README.md
 
 ```bash
 git diff HEAD README.md > changes.diff
-rendermd changes.diff
+mdvp changes.diff
 ```
 
 ### 3. Quick Notes Workflow
@@ -290,17 +292,17 @@ rendermd changes.diff
 echo "# Quick Note\n\nSome thoughts..." > note.md
 
 # Preview it
-rendermd note.md
+mdvp note.md
 ```
 
 ### 4. Compare Themes
 
 ```bash
 # Light theme
-rendermd doc.md --theme light
+mdvp doc.md --theme light
 
-# Dark theme  
-rendermd doc.md --theme dark
+# Dark theme
+mdvp doc.md --theme dark
 ```
 
 ### 5. Batch Processing
@@ -308,7 +310,7 @@ rendermd doc.md --theme dark
 ```bash
 # Preview all markdown files (be careful with cleanup!)
 for file in *.md; do
-    rendermd "$file" --cleanup-delay 10000
+    mdvp "$file" --cleanup-delay 10000
     sleep 2
 done
 ```
@@ -318,42 +320,42 @@ done
 ### Documentation Review
 
 ```bash
-rendermd README.md --no-auto-cleanup
+mdvp README.md --no-auto-cleanup
 # Review in browser
 # Make edits
-rendermd README.md --no-auto-cleanup
+mdvp README.md --no-auto-cleanup
 # Review again
 ```
 
 ### Blog Post Writing
 
 ```bash
-rendermd draft.md --theme light --no-toc
+mdvp draft.md --theme light --no-toc
 ```
 
 ### Technical Specification
 
 ```bash
-rendermd spec.md --theme dark --math --mermaid
+mdvp spec.md --theme dark --math --mermaid
 ```
 
 ### Meeting Notes
 
 ```bash
-rendermd notes-2026-01-14.md --no-auto-cleanup
+mdvp notes-2026-01-14.md --no-auto-cleanup
 ```
 
 ## Getting Help
 
 ```bash
 # Show all options
-rendermd --help
+mdvp --help
 
 # Show version
-rendermd --version
+mdvp --version
 ```
 
 ## Feedback & Issues
 
 Found a bug or have a feature request? Open an issue at:
-https://github.com/Showwaiyan/Render-md/issues
+https://github.com/Showwaiyan/md-viewport/issues

@@ -1,18 +1,18 @@
-# rendermd Demo
+# md-viewport Demo
 
-This is a demonstration of all the features supported by rendermd.
+This is a demonstration of all the features supported by md-viewport.
 
 ## Introduction
 
-Welcome to **rendermd**! This tool converts Markdown files into beautifully styled HTML pages. It supports all the features you'd expect from a modern Markdown renderer.
+Welcome to **md-viewport**! This tool converts Markdown files into beautifully styled HTML pages. It supports all the features you'd expect from a modern Markdown renderer.
 
 ## Text Formatting
 
-You can use *italic*, **bold**, ***bold italic***, ~~strikethrough~~, and `inline code`.
+You can use _italic_, **bold**, **_bold italic_**, ~~strikethrough~~, and `inline code`.
 
 ### Links and Images
 
-Check out the [rendermd repository](https://github.com/Showwaiyan/Render-md) on GitHub.
+Check out the [md-viewport repository](https://github.com/Showwaiyan/md-viewport) on GitHub.
 
 ## Lists
 
@@ -67,13 +67,13 @@ print(quick_sort([3, 6, 8, 10, 1, 2, 1]))
 
 ## Tables
 
-| Feature | Supported | Notes |
-|---------|-----------|-------|
-| GFM | ✅ | Full support |
-| Syntax Highlighting | ✅ | Via Highlight.js |
-| Math | ✅ | Via KaTeX |
-| Mermaid | ✅ | Client-side rendering |
-| Auto TOC | ✅ | From h2-h6 |
+| Feature             | Supported | Notes                 |
+| ------------------- | --------- | --------------------- |
+| GFM                 | ✅        | Full support          |
+| Syntax Highlighting | ✅        | Via Highlight.js      |
+| Math                | ✅        | Via KaTeX             |
+| Mermaid             | ✅        | Client-side rendering |
+| Auto TOC            | ✅        | From h2-h6            |
 
 ## Math Equations
 
@@ -112,7 +112,7 @@ sequenceDiagram
     participant User
     participant CLI
     participant Browser
-    User->>CLI: rendermd file.md
+    User->>CLI: md-viewport file.md
     CLI->>CLI: Parse markdown
     CLI->>CLI: Generate HTML
     CLI->>Browser: Open temp file
@@ -134,28 +134,30 @@ sequenceDiagram
 ### Nested Lists with Code
 
 1. First, install the package:
+
    ```bash
-   npm install -g rendermd
+   npm install -g md-viewport
    ```
 
 2. Then run it on any markdown file:
+
    ```bash
-   rendermd README.md
+   md-viewport README.md
    ```
 
 3. Enjoy the beautiful output!
 
 ### Complex Table
 
-| Language | Paradigm | Typing | Year |
-|----------|----------|--------|------|
+| Language   | Paradigm       | Typing  | Year |
+| ---------- | -------------- | ------- | ---- |
 | JavaScript | Multi-paradigm | Dynamic | 1995 |
-| Python | Multi-paradigm | Dynamic | 1991 |
-| Rust | Multi-paradigm | Static | 2010 |
-| Go | Procedural | Static | 2009 |
+| Python     | Multi-paradigm | Dynamic | 1991 |
+| Rust       | Multi-paradigm | Static  | 2010 |
+| Go         | Procedural     | Static  | 2009 |
 
 ## Conclusion
 
-**rendermd** makes it easy to preview your Markdown files with professional styling. Try it out today!
+**md-viewport** makes it easy to preview your Markdown files with professional styling. Try it out today!
 
-Visit the [GitHub repository](https://github.com/Showwaiyan/Render-md) for more information.
+Visit the [GitHub repository](https://github.com/Showwaiyan/md-viewport) for more information.

@@ -1,24 +1,24 @@
 # Quick Start Guide
 
-Get started with `@showwaiyan/rendermd` in 30 seconds!
+Get started with `md-viewport` in 30 seconds!
 
 ## Installation
 
 ```bash
-npm install -g @showwaiyan/rendermd
+npm install -g md-viewport
 ```
 
 Or use without installing:
 
 ```bash
-npx @showwaiyan/rendermd README.md
+npx md-viewport README.md
 ```
 
 ## Basic Usage
 
 ```bash
 # Render any markdown file
-rendermd README.md
+mdvp README.md
 
 # That's it! Your browser will open with a beautifully styled version
 ```
@@ -27,18 +27,18 @@ rendermd README.md
 
 ```bash
 # Dark theme
-rendermd docs.md --theme dark
+mdvp docs.md --theme dark
 
 # Disable table of contents
-rendermd notes.md --no-toc
+mdvp notes.md --no-toc
 
 # Keep the HTML file (don't auto-delete)
-rendermd article.md --no-auto-cleanup
+mdvp article.md --no-auto-cleanup
 ```
 
 ## Configuration
 
-Create `.rendermdrc.json` in your project:
+Create `.mdvprc.json` in your project:
 
 ```json
 {
@@ -62,13 +62,13 @@ Create `.rendermdrc.json` in your project:
 Try it with the included example:
 
 ```bash
-rendermd example.md
+mdvp example.md
 ```
 
 ## Need Help?
 
 ```bash
-rendermd --help
+mdvp --help
 ```
 
-Visit [GitHub](https://github.com/Showwaiyan/Render-md) for full documentation.
+Visit [GitHub](https://github.com/Showwaiyan/md-viewport) for full documentation.

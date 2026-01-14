@@ -1,6 +1,6 @@
-# rendermd
+# md-viewport
 
-[![npm version](https://badge.fury.io/js/@showwaiyan%2Frendermd.svg)](https://www.npmjs.com/package/@showwaiyan/rendermd)
+[![npm version](https://badge.fury.io/js/md-viewport.svg)](https://www.npmjs.com/package/md-viewport)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 A lightweight CLI tool that renders Markdown files into rich, beautifully styled HTML pages in your browser. No live server needed—just instant, polished markdown previews.
@@ -16,27 +16,27 @@ A lightweight CLI tool that renders Markdown files into rich, beautifully styled
 - **Copy Code Button** - One-click copying for code blocks
 - **Self-Contained Output** - All styles and scripts inline, no dependencies
 - **Auto Cleanup** - Temp files automatically deleted after viewing
-- **Configurable** - Use `.rendermdrc` for persistent preferences
+- **Configurable** - Use `.mdvprc` for persistent preferences
 
 ## Installation
 
 ### Global Installation (Recommended)
 
 ```bash
-npm install -g @showwaiyan/rendermd
+npm install -g md-viewport
 ```
 
 ### Using npx (No Installation Required)
 
 ```bash
-npx @showwaiyan/rendermd README.md
+npx md-viewport README.md
 ```
 
 ### Local Development
 
 ```bash
-git clone https://github.com/Showwaiyan/Render-md.git
-cd Render-md
+git clone https://github.com/Showwaiyan/md-viewport.git
+cd md-viewport
 npm install
 npm run build
 npm link
@@ -47,10 +47,11 @@ npm link
 ### Basic Usage
 
 ```bash
-rendermd README.md
+mdvp README.md
 ```
 
 This will:
+
 1. Convert your markdown to HTML
 2. Apply beautiful GitHub Modern styling
 3. Open it in your default browser
@@ -59,7 +60,7 @@ This will:
 ### CLI Options
 
 ```bash
-rendermd <file> [options]
+mdvp <file> [options]
 
 Options:
   -V, --version              output the version number
@@ -79,21 +80,21 @@ Options:
 
 ```bash
 # Force dark theme
-rendermd README.md --theme dark
+mdvp README.md --theme dark
 
 # Disable table of contents
-rendermd README.md --no-toc
+mdvp README.md --no-toc
 
 # Keep temp file (don't auto-delete)
-rendermd README.md --no-auto-cleanup
+mdvp README.md --no-auto-cleanup
 
 # Custom cleanup delay (5 minutes)
-rendermd README.md --cleanup-delay 300000
+mdvp README.md --cleanup-delay 300000
 ```
 
 ## Configuration File
 
-Create a `.rendermdrc` or `.rendermdrc.json` file in your project root or home directory:
+Create a `.mdvprc` or `.mdvprc.json` file in your project root or home directory:
 
 ```json
 {
@@ -110,10 +111,11 @@ Create a `.rendermdrc` or `.rendermdrc.json` file in your project root or home d
 ```
 
 **Config File Priority:**
-1. `./rendermdrc` (current directory)
-2. `./rendermdrc.json` (current directory)
-3. `~/.rendermdrc` (home directory)
-4. `~/.rendermdrc.json` (home directory)
+
+1. `./.mdvprc` (current directory)
+2. `./.mdvprc.json` (current directory)
+3. `~/.mdvprc` (home directory)
+4. `~/.mdvprc.json` (home directory)
 
 CLI options will override config file settings.
 
@@ -143,6 +145,7 @@ function hello(name) {
 Inline math: $E = mc^2$
 
 Block math:
+
 $$
 \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
@@ -166,26 +169,27 @@ graph TD
 2. **Parses** it with marked.js (GFM mode)
 3. **Applies** syntax highlighting, math rendering, etc.
 4. **Generates** a self-contained HTML file with all styles/scripts inline
-5. **Writes** to a temp file (e.g., `/tmp/rendermd-abc123.html`)
+5. **Writes** to a temp file (e.g., `/tmp/md-viewport-abc123.html`)
 6. **Opens** it in your default browser
 7. **Cleans up** the temp file after a delay (optional)
 
 ## Browser Support
 
 Works with any modern browser:
+
 - Chrome/Edge 90+
 - Firefox 88+
 - Safari 14+
 
 ## Programmatic Usage
 
-You can also use `rendermd` as a library in your Node.js projects:
+You can also use `md-viewport` as a library in your Node.js projects:
 
 ```typescript
-import { renderMarkdown, loadConfig } from 'rendermd';
+import { renderMarkdown, loadConfig } from "md-viewport";
 
 const config = await loadConfig();
-const html = await renderMarkdown('# Hello World', config, 'My Document');
+const html = await renderMarkdown("# Hello World", config, "My Document");
 console.log(html);
 ```
 
@@ -193,8 +197,8 @@ console.log(html);
 
 ```bash
 # Clone the repository
-git clone https://github.com/Showwaiyan/Render-md.git
-cd Render-md
+git clone https://github.com/Showwaiyan/md-viewport.git
+cd md-viewport
 
 # Install dependencies
 npm install
@@ -212,7 +216,7 @@ node dist/cli.js test.md
 ## Project Structure
 
 ```
-Render-md/
+md-viewport/
 ├── src/
 │   ├── cli.ts              # CLI entry point
 │   ├── renderer.ts         # Core markdown → HTML conversion
@@ -257,4 +261,3 @@ Showwaiyan
 - [KaTeX](https://katex.org/) - Math rendering
 - [Mermaid](https://mermaid.js.org/) - Diagrams
 - GitHub for design inspiration
-
